@@ -259,6 +259,7 @@ export default function AddToListDialog({
                   onClick={() => {
                     setShowCreateList(false);
                     setNewListName("");
+                    setSearchTerm("");
                   }}
                   variant="outline"
                   className="flex-1"
