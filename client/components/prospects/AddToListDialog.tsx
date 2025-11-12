@@ -209,18 +209,22 @@ export default function AddToListDialog({
                       {filteredLists.length > 0 ? (
                         filteredLists.map((list) => {
                         const isSelected = selectedListIds.has(list.id);
-                        const alreadyInList = list.prospects.includes(prospectId);
+                        // Check how many prospects are already in the list
+                        const newProspectsCount = currentProspectIds.filter(
+                          (id) => !list.prospects.includes(id)
+                        ).length;
+                        const allProspectsAlreadyInList = newProspectsCount === 0;
 
                         return (
                           <button
                             key={list.id}
-                            onClick={() => !alreadyInList && handleToggleList(list.id)}
-                            disabled={alreadyInList}
+                            onClick={() => !allProspectsAlreadyInList && handleToggleList(list.id)}
+                            disabled={allProspectsAlreadyInList}
                             className={cn(
                               "w-full flex items-center justify-between p-3 rounded-lg border-2 transition-all text-left",
-                              isSelected && !alreadyInList
+                              isSelected && !allProspectsAlreadyInList
                                 ? "border-valasys-orange bg-valasys-orange/5"
-                                : alreadyInList
+                                : allProspectsAlreadyInList
                                   ? "border-gray-200 bg-gray-50 cursor-not-allowed"
                                   : "border-gray-200 hover:border-gray-300",
                             )}
@@ -228,13 +232,21 @@ export default function AddToListDialog({
                             <div className="flex-1">
                               <div className="font-medium text-gray-900">{list.name}</div>
                               <div className="text-xs text-gray-500">
-                                {list.prospects.length} prospect{list.prospects.length !== 1 ? "s" : ""}
+                                {isBulk ? (
+                                  <>
+                                    {allProspectsAlreadyInList
+                                      ? `All ${currentProspectIds.length} already in this list`
+                                      : `${newProspectsCount} new to add`}
+                                  </>
+                                ) : (
+                                  <>{list.prospects.length} prospect{list.prospects.length !== 1 ? "s" : ""}</>
+                                )}
                               </div>
                             </div>
-                            {alreadyInList ? (
+                            {allProspectsAlreadyInList ? (
                               <div className="flex items-center gap-1 text-xs text-green-600">
                                 <Check className="w-4 h-4" />
-                                Added
+                                All Added
                               </div>
                             ) : isSelected ? (
                               <div className="w-5 h-5 rounded-md bg-valasys-orange flex items-center justify-center">
