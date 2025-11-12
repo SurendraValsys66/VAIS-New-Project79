@@ -1050,6 +1050,7 @@ export default function WishlistProspectDetails() {
                           onCheckedChange={handleSelectAll}
                         />
                       </TableHead>
+                      <TableHead className="w-10"></TableHead>
                       {columnVisibility.prospect && (
                         <TableHead
                           className="cursor-pointer hover:bg-gray-100 transition-colors"
