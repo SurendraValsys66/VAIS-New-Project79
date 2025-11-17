@@ -203,20 +203,14 @@ export default function AgreementModal({
   onOpenChange,
   onConfirm,
 }: AgreementModalProps) {
-  const [hasRead, setHasRead] = useState(false);
-  const [hasUnderstood, setHasUnderstood] = useState(false);
-  const [hasAgreed, setHasAgreed] = useState(false);
-
-  const allCheckboxesChecked = hasRead && hasUnderstood && hasAgreed;
+  const [agreementConfirmed, setAgreementConfirmed] = useState(false);
 
   const handleConfirm = () => {
-    if (allCheckboxesChecked) {
+    if (agreementConfirmed) {
       onConfirm();
       onOpenChange(false);
       setTimeout(() => {
-        setHasRead(false);
-        setHasUnderstood(false);
-        setHasAgreed(false);
+        setAgreementConfirmed(false);
       }, 300);
     }
   };
@@ -247,48 +241,18 @@ export default function AgreementModal({
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Checkbox
-                  id="hasRead"
-                  checked={hasRead}
-                  onCheckedChange={(checked) => setHasRead(checked === true)}
-                  className="w-5 h-5 rounded-none"
-                />
-                <label
-                  htmlFor="hasRead"
-                  className="text-sm text-valasys-gray-700 cursor-pointer"
-                >
-                  I have read the entire agreement
-                </label>
-              </div>
-
-              <div className="flex items-center space-x-3">
-                <Checkbox
-                  id="hasUnderstood"
-                  checked={hasUnderstood}
+                  id="agreementConfirmed"
+                  checked={agreementConfirmed}
                   onCheckedChange={(checked) =>
-                    setHasUnderstood(checked === true)
+                    setAgreementConfirmed(checked === true)
                   }
                   className="w-5 h-5 rounded-none"
                 />
                 <label
-                  htmlFor="hasUnderstood"
+                  htmlFor="agreementConfirmed"
                   className="text-sm text-valasys-gray-700 cursor-pointer"
                 >
-                  I have understood all the terms and conditions
-                </label>
-              </div>
-
-              <div className="flex items-center space-x-3">
-                <Checkbox
-                  id="hasAgreed"
-                  checked={hasAgreed}
-                  onCheckedChange={(checked) => setHasAgreed(checked === true)}
-                  className="w-5 h-5 rounded-none"
-                />
-                <label
-                  htmlFor="hasAgreed"
-                  className="text-sm text-valasys-gray-700 cursor-pointer"
-                >
-                  I agree to the Master Subscriber Agreement
+                  I have read the entire agreement, understood all the terms and conditions, and I agree to the Master Subscriber Agreement
                 </label>
               </div>
             </div>
@@ -299,14 +263,14 @@ export default function AgreementModal({
             <Button
               type="button"
               onClick={handleConfirm}
-              disabled={!allCheckboxesChecked}
+              disabled={!agreementConfirmed}
               className={`font-medium transition-all duration-200 ${
-                allCheckboxesChecked
+                agreementConfirmed
                   ? "bg-valasys-orange hover:bg-valasys-orange-light text-white"
                   : "bg-valasys-gray-200 text-valasys-gray-500 cursor-not-allowed"
               }`}
             >
-              {allCheckboxesChecked ? "I agree & confirm" : "I agree & confirm"}
+              I agree & confirm
             </Button>
           </div>
         </div>
