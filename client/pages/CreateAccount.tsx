@@ -425,6 +425,37 @@ export default function CreateAccount() {
                   </label>
                 </div>
 
+                <div className="flex items-start space-x-3 mb-4">
+                  <input
+                    type="checkbox"
+                    id="termsCheck"
+                    checked={termsAgreed}
+                    onChange={(e) => setTermsAgreed(e.target.checked)}
+                    className="mt-1 h-4 w-4 rounded border-valasys-gray-300 text-valasys-orange"
+                  />
+                  <label
+                    htmlFor="termsCheck"
+                    className="text-sm text-valasys-gray-700"
+                  >
+                    By signing up, you agree to our{" "}
+                    <a
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
+                      className="text-valasys-orange hover:text-valasys-orange-light underline font-semibold"
+                    >
+                      Terms & Conditions
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
+                      className="text-valasys-orange hover:text-valasys-orange-light underline font-semibold"
+                    >
+                      Privacy Policy
+                    </a>
+                  </label>
+                </div>
+
                 <div className="flex items-center justify-between">
                   <Button
                     type="button"
