@@ -611,7 +611,13 @@ export default function Payments() {
   };
 
   const handleAddPaymentMethod = (method: PaymentMethod) => {
-    setPaymentMethodsList((prev) => [...prev, method]);
+    setPaymentMethodsList((prev) => {
+      const isFirstCard = prev.length === 0;
+      const newMethod = isFirstCard
+        ? { ...method, isDefault: true, autopayEnabled: true }
+        : method;
+      return [...prev, newMethod];
+    });
   };
 
   const HeaderSort = ({
