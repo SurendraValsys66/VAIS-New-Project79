@@ -387,29 +387,82 @@ export function AddPaymentMethodDialog({
                       />
                       <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center gap-1">
                         {/* VISA */}
-                        <svg className={`w-7 h-5 transition-opacity ${cardNetwork === "Visa" ? "opacity-100" : "opacity-30"}`} viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect width="48" height="32" rx="3" fill="#1434CB"/>
-                          <text x="24" y="18" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold" dominantBaseline="middle">VISA</text>
+                        <svg
+                          className={`w-7 h-5 transition-opacity ${cardNetwork === "Visa" ? "opacity-100" : "opacity-30"}`}
+                          viewBox="0 0 48 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect width="48" height="32" rx="3" fill="#1434CB" />
+                          <text
+                            x="24"
+                            y="18"
+                            textAnchor="middle"
+                            fill="white"
+                            fontSize="10"
+                            fontWeight="bold"
+                            dominantBaseline="middle"
+                          >
+                            VISA
+                          </text>
                         </svg>
 
                         {/* Mastercard */}
-                        <svg className={`w-7 h-5 transition-opacity ${cardNetwork === "Mastercard" ? "opacity-100" : "opacity-30"}`} viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect width="48" height="32" rx="3" fill="white" stroke="#E5E7EB" strokeWidth="0.5"/>
-                          <circle cx="16" cy="16" r="9" fill="#EB001B"/>
-                          <circle cx="32" cy="16" r="9" fill="#FF5F00"/>
-                          <circle cx="24" cy="16" r="9" fill="#FF5F00" opacity="0.6"/>
+                        <svg
+                          className={`w-7 h-5 transition-opacity ${cardNetwork === "Mastercard" ? "opacity-100" : "opacity-30"}`}
+                          viewBox="0 0 48 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            width="48"
+                            height="32"
+                            rx="3"
+                            fill="white"
+                            stroke="#E5E7EB"
+                            strokeWidth="0.5"
+                          />
+                          <circle cx="16" cy="16" r="9" fill="#EB001B" />
+                          <circle cx="32" cy="16" r="9" fill="#FF5F00" />
+                          <circle
+                            cx="24"
+                            cy="16"
+                            r="9"
+                            fill="#FF5F00"
+                            opacity="0.6"
+                          />
                         </svg>
 
                         {/* American Express */}
-                        <svg className={`w-7 h-5 transition-opacity ${cardNetwork === "American Express" ? "opacity-100" : "opacity-30"}`} viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect width="48" height="32" rx="3" fill="#006FCF"/>
-                          <text x="24" y="18" textAnchor="middle" fill="white" fontSize="9" fontWeight="bold" dominantBaseline="middle">AMEX</text>
+                        <svg
+                          className={`w-7 h-5 transition-opacity ${cardNetwork === "American Express" ? "opacity-100" : "opacity-30"}`}
+                          viewBox="0 0 48 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect width="48" height="32" rx="3" fill="#006FCF" />
+                          <text
+                            x="24"
+                            y="18"
+                            textAnchor="middle"
+                            fill="white"
+                            fontSize="9"
+                            fontWeight="bold"
+                            dominantBaseline="middle"
+                          >
+                            AMEX
+                          </text>
                         </svg>
 
                         {/* Discover */}
-                        <svg className={`w-7 h-5 transition-opacity ${cardNetwork === "Discover" ? "opacity-100" : "opacity-30"}`} viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect width="48" height="32" rx="3" fill="#FF6000"/>
-                          <circle cx="28" cy="16" r="5" fill="white"/>
+                        <svg
+                          className={`w-7 h-5 transition-opacity ${cardNetwork === "Discover" ? "opacity-100" : "opacity-30"}`}
+                          viewBox="0 0 48 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect width="48" height="32" rx="3" fill="#FF6000" />
+                          <circle cx="28" cy="16" r="5" fill="white" />
                         </svg>
                       </div>
                     </div>
@@ -456,9 +509,15 @@ export function AddPaymentMethodDialog({
                           maxLength={4}
                         />
                         <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                          <svg className="w-5 h-4 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <rect x="2" y="5" width="20" height="14" rx="2"/>
-                            <rect x="2" y="5" width="20" height="4"/>
+                          <svg
+                            className="w-5 h-4 text-gray-400"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <rect x="2" y="5" width="20" height="14" rx="2" />
+                            <rect x="2" y="5" width="20" height="4" />
                           </svg>
                         </div>
                         {getErrorMessage("cvc") && (
