@@ -55,6 +55,7 @@ import {
 import { cn } from "@/lib/utils";
 import { FloatingStatsWidget } from "@/components/ui/floating-stats-widget";
 import { markStepCompleted } from "@/lib/masteryStorage";
+import { FeedbackModal } from "@/components/ui/feedback-modal";
 
 interface FormData {
   productSubcategory: string;
