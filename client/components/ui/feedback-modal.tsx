@@ -47,7 +47,7 @@ export function FeedbackModal({ open, onOpenChange }: FeedbackModalProps) {
           <div className="space-y-3 text-center">
             <h3 className="text-lg font-bold text-gray-900">
               We love to hear from you! How's your experience with the{" "}
-              <span style={{ color: "#f7c52a" }}>Valasys AI Score</span>?
+              <span className="text-valasys-orange">Valasys AI Score</span>?
             </h3>
 
             {/* Star Rating */}
