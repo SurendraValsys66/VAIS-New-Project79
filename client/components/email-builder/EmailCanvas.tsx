@@ -18,10 +18,13 @@ interface EmailCanvasProps {
 
 export const EmailCanvas: React.FC<EmailCanvasProps> = ({
   template,
+  templateSubject,
   selectedBlockId,
   onAddBlock,
   onBlockUpdate,
   onBlockSelect,
+  onTemplateSubjectChange,
+  onBackgroundColorChange,
 }) => {
   const [{ isOver }, drop] = useDrop(() => ({
     accept: "block",
