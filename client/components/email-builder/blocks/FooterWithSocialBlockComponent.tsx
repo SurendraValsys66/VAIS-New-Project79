@@ -5,8 +5,10 @@ import { SocialBlockComponent } from "./SocialBlockComponent";
 interface FooterWithSocialBlockComponentProps {
   block: FooterWithSocialBlock;
   isSelected: boolean;
+  selectedElement?: string | null;
   onContentChange: (field: string, value: any) => void;
   onSocialUpdate: (social: any) => void;
+  onElementSelect?: (element: string) => void;
 }
 
 export const FooterWithSocialBlockComponent: React.FC<
