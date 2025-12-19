@@ -1352,6 +1352,26 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
 
                 <div>
                   <Label className="text-xs text-gray-700 mb-1 block">
+                    Height
+                  </Label>
+                  <div className="flex gap-2">
+                    <Input
+                      type="number"
+                      value={block.height}
+                      onChange={(e) =>
+                        onBlockUpdate({
+                          ...block,
+                          height: parseInt(e.target.value),
+                        })
+                      }
+                      className="flex-1 focus:ring-valasys-orange focus:ring-2"
+                    />
+                    <span className="px-2 py-1 text-sm text-gray-600">px</span>
+                  </div>
+                </div>
+
+                <div>
+                  <Label className="text-xs text-gray-700 mb-1 block">
                     Block Alignment
                   </Label>
                   <div className="flex gap-2">
