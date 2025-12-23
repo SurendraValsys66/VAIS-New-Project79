@@ -1493,9 +1493,7 @@ export default function MyDownloadedList() {
                           Upload to{" "}
                           {selectedCrm === "hubspot"
                             ? "HubSpot"
-                            : selectedCrm === "salesforce"
-                              ? "Salesforce"
-                              : "Marketo"}
+                            : "Salesforce"}
                         </>
                       )}
                     </Button>
